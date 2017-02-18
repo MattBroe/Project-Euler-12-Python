@@ -1,5 +1,5 @@
 #Project Euler 12
-#Matt Broe
+#by Matt Broe
 
 #Prompt: Find the least triangular number with more than 500 divisors.
 
@@ -29,7 +29,7 @@ def numDivisors(n, primeList):
         #Find the highest power of p dividing n, and use it to compute d(n)
         power = 0
         while n % p == 0:
-            n = n//p
+            n = n // p
             power += 1
         currentNumDivisors *= (power + 1)
 
@@ -45,14 +45,14 @@ x = 2
 while True:
     x += 1
     numDivisors(x, primeList)
-    if x%2 == 0:
-        a = numDivisorDict[x//2]
-        b = numDivisorDict[x-1]
+    if x % 2 == 0:
+        a = numDivisorDict[x // 2]
+        b = numDivisorDict[x - 1]
     else:
         a = numDivisorDict[x]
-        b = numDivisorDict[(x-1)//2]
-    if a*b > 500:
-        print("The least triangular number with more than 500 divisors is ({}*{})/2 = {}.".format(str(x-1), str(x), str(((x-1)*x)//2)))
+        b = numDivisorDict[(x - 1) // 2]
+    if a * b > 500:
+        print("The least triangular number with more than 500 divisors is ({}*{})/2 = {}.".format(str(x - 1), str(x), str(((x - 1) * x) // 2)))
         break
     
 
